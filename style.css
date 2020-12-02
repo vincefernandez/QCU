@@ -1,0 +1,155 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.header{
+    
+    margin: 0px;
+    padding: 10px;
+    background-color: #2E3136;
+    border-bottom: 3px solid rgb(87, 206, 87);
+   
+
+}
+.header .LogInBtnNavBar{
+    
+        float: right;
+        margin: 0px 0px;
+        border: none;
+        background: none;
+        background-color: rgb(56, 164, 231);
+        color: white;
+        padding: 9px;
+        font-size: 120%;
+        letter-spacing: 1px;
+        outline: none;
+        border-radius: 10px;
+        transition: 0.7s;
+        cursor: pointer;
+        width: 15%;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      
+    
+}
+
+.head{
+    cursor: pointer;
+    margin: 0px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    padding: 0px;
+    color: aliceblue;
+    display: inline-block;
+    
+}
+.halfHead{
+    color: aqua;
+}
+.fa-university{
+    color: rgb(114, 248, 4);
+}
+.Univer{
+ color:aqua;
+}
+.logInBtnNavBar{
+    float: right;
+    margin: 0px 0px;
+    border: none;
+    background: none;
+    background-color: rgb(56, 164, 231);
+    color: white;
+    padding: 9px;
+    font-size: 120%;
+    letter-spacing: 1px;
+    outline: none;
+    border-radius: 10px;
+    transition: 0.7s;
+    cursor: pointer;
+    width: 15%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 10px;
+  
+}
+.logInBtnNavBar:hover{
+    color: rgb(114, 248, 4);
+}
+.area{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    background-color: #2E3136;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-align: center;
+    top: 0;
+    left: 0;
+}
+.navbar{
+   
+   background-color: #333;
+   color:#fff;
+    line-height: 1.6em;
+}
+.container{
+    width: 100%;
+    margin: 5px;
+}
+.fa-angle-double-down{
+    color: aliceblue;
+    font-size: 110%;
+    margin-bottom: 5px;
+}
+.intro{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.welcomeHead{
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
+    
+
+    font-size: 320%;
+    color:rgb(236, 10, 168);
+    height: 60px;
+    width: 0;
+    overflow: hidden;
+    transition: width 0.7s;
+}
+.welcomeSubHead{
+    text-align: center;
+    margin: 0px;
+    color: rgb(25, 1, 34);
+    letter-spacing: 1px;
+}
+.subScribeBtn{
+    background: none;
+    border: none;
+    border: 2px solid rgb(87, 206, 87);
+    font-size: 120%;
+    border-radius: 15px;
+    padding: 10px;
+    padding-top: 12px;
+    color: #454955;
+    outline: none;
+    transition: 1s;
+    letter-spacing: 1px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.subScribeBtn:hover{
+    background-color: rgb(87, 206, 87);
+    color: white;
+}
+
+@media only screen and (max-width: 550px) {
+    .welcomeHead{
+              color:rgb(236, 10, 168);
+              font-size: 40px;
+              height:50px;
+    }
+}
