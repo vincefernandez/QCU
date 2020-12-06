@@ -197,6 +197,7 @@ body {
     }
     .login-text{
         top: -350px;
+        height:73%;
     }
     .cta{
         bottom: -40px;
