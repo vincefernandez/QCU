@@ -1,112 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <link rel="stylesheet" href="style.css"></link>
-   <link rel="stylesheet" type="text/css" href="imageCss.css"/></link>
-    <title>QCU Portal</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet"  href="css.css">
+    <link rel="stylesheet" href="animationAlert/animation.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">;
+    <title>Quezon City University</title>
 </head>
 <body>
-
-
-    <div class="container">
-        <div class="header">
-            <h1 class="head" title="Quezon City University">
-                <i class="fa fa-university"></i> Quezon City </i><span class="halfHead">University<sup style="font-size:40%; color: white;"></sup>
-                </span>
-            </h1>
-            <button class="logInBtnNavBar" title="Log in" onclick="showSide();">
-                <i class="fas fa-sign" aria-hidden="true"> </i> LOG IN
-            </button>
-        </div>
-        <!-- <div id="loginArea" class="area">
-            <a href="javascript:void(0)" title="Close" class="closebtn" onclick="closeSide()">&times;</a>
-            <button class="panelBtn" title="Login On Admin Panel" onclick="a();">Admin Panel</button>
-            <br />
-            <button class="panelBtn" title="Login On Employee Panel" onclick="e();">Employee Panel</button>
-        </div> -->
-        <div class="intro">
-            <h1 class="welcomeHead" id="a">STUDENT PORTAL</h1>
-       
-            <p class="welcomeSubHead">This Website aim to have the best portal for student.</p>
-            <a href="#hell"><button class="subScribeBtn"><i class="fa fa-chevron-down" aria-hidden="true style="color:#454955"></i> Lets' Go!</button></a>
-          
-     
-            <div class="imagecontainer">
-                <img src="image1.jpg" alt="Avatar" class="image">
-                
-
-                <div class="overlay">
-                  <div class="pic">
-                      <img src="image2.jpg" alt="Picture" id ="hell">
-                  </div>
-                </div>
-               
-              </div>
-              <div class="imagecontainer">
-                <img src="image2.jpg" alt="Avatar" class="image">
-                
-
-                <div class="overlay">
-                  <div class="pic">
-                      <img src="image1.jpg" alt="Picture" id ="hell">
-                  </div>
-                </div>
-               
-              </div>
-        </div>
-        </div>
-       
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <footer class = "foot">
-          <h6> Copyright vincefernandez.github.io/QCU/ All Rights Reserved
-         <button class= "butangina"><a href ="https://www.facebook.com/V1nc3p0gi">Vincent Fernandez </button></a>
-         </h6>
-        </footer>
-          
-    <script src="function.js"></script>
-<!-- 
-    <div class="container"> 
-        <div class="header">
-        <h1 class="head" title="QcuPortal">
-
-            <i class="fa fa-university"></i> Quezon City University<span class="halfHead">Portal<sup style="font-size:40%; color: white;">&reg</sup>
-            </span>
-
-          <!-- <i class="title"> <i class="fa fa-university" aria-hidden="true" aria-hidden="true"></i> Quezon <span class="halfHead">City <sup style="font-size:40%; color: white;">
-            </sup></i></span><span class="University">University <sup style="font-size:40%; color: white;">&reg</span> -->
-
-
-       <!--  </h1>
-        <button class="logInBtnNavBar" title="Log in" onclick="showSide();">
-            <i class="fa fa-sign-in" aria-hidden="true"> </i> LOG IN
-        </button>
+  
+    <div class="wrapper">
     
-    </div>
-</div> -->
+      <div class="header">
+          
+          <div class="login-text">
+            
+          <button class="cta"><i class="fa fa-chevron-down fa-2x" aria-hidden="true"> </i>LogIn!</button>
+          <div class="text">
+            <p> Quezon City University Student Portal</p>
+          
+           <br>
+            <p class="Welcome"> Welcome Student</p>
+          <br> 
+           <br>
+            <input type="text" placeholder="Username">
+            <br>
+            <input type="password" placeholder="Password">
+           <br>
+          
+            <button class="Admin" id="Admin"  onclick="alert('Welcome Admin')"> Admin Access!</button>
+            <button class="Student" id="Stud" onclick="alert('Welcome Student')">   Student Access!</button>
+           
 
+
+          </div>
+          </div>
+        <div class="call-text">
+          <h1>Quezon City University Portal <span>
+            is a gateway for online student information, lectures, discussions, resources and other services exclusive to QCU students.
+            
+            It aims to enhance and extend the students' learning experience through information technology beyond the bounds of the classroom.
+          
+          </span>
+           </h1>
+          <button class="Visit"><i class="fa fa-chevron-down" aria-hidden="true"></i>  Visit QCU</button>
+        </div>
+      </div>
+      </div>
+    </div>
+   
+    <script src="js.js"></script>
 </body>
 </html>
