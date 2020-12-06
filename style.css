@@ -193,7 +193,7 @@ body {
 }
 @media only screen and (max-width: 480px) {
     .expand {
-        transform: translateY(70%);
+        transform: translateY(68%);
     }
     .login-text{
         top: -350px;
@@ -204,7 +204,7 @@ body {
     }
      .h1{
         width: 100%;
-        font-size: 1.9rem;
+       font-size: 2.0rem;
         
     }
     
