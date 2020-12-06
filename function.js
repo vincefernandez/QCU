@@ -1,6 +1,6 @@
 var cta = document.querySelector(".cta");
 
-var check = 2;
+var check = 0;
 
 cta.addEventListener('click', function(e){
     var text = e.target.nextElementSibling;
