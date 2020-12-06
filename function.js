@@ -1,5 +1,5 @@
 var cta = document.querySelector(".cta");
-
+var i = document.querySelector("i");
 var check = 2;
 
 cta.addEventListener('click', function(e){
