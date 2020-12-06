@@ -202,14 +202,14 @@ body {
         bottom: -40px;
     }
      .h1{
-     font-size: 1.3em;   
+     font-size: 1.8em;   
     }
    
     span{
         font-size: none;
     }
     .login-text {
-        border: 6px solid red;
+        border: 6px solid orange;
     }
     
   }
