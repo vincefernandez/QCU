@@ -153,7 +153,7 @@ body {
     .header{
         font-size: 60p;
     }
-    h1 {
+    .h1 {
         
         font-size: 40px;
         margin-top: 10%;
@@ -202,8 +202,8 @@ body {
     .cta{
         bottom: -40px;
     }
-     h1{
-        font-size: 1.6em;
+     .h1{
+        font-size: 0.9em;
         
     }
     
