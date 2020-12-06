@@ -189,7 +189,7 @@ body {
 }
 
 .expand {
-    transform: translateY(300px);
+    transform: translateY(60%);
 }
 @media only screen and (max-width: 480px) {
     .expand {
@@ -203,7 +203,7 @@ body {
         bottom: -40px;
     }
      .h1{
-        font-size: 0.9em;
+        font-size: 1.0em;
         
     }
     
