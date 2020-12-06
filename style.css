@@ -129,7 +129,7 @@ body {
     background: #696a86;
     border: solid 2px white;
     position: absolute;
-    bottom: -60px;
+    bottom: -40px;
     left: 40%;
     color: rgb(12, 12, 12);
     outline: none;
@@ -191,17 +191,18 @@ body {
 .expand {
     transform: translateY(300px);
 }
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 479px) {
     .expand {
         transform: translateY(60%);
     }
     .login-text{
         top: -350px;
-        height:70%;
+        height: 70%;
     }
     .cta{
         bottom: -40px;
     }
+    
   }
   
   
