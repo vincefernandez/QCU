@@ -142,7 +142,7 @@ body {
     opacity: 0.6;
     font-weight: bold;
     background-color: #fff;
-    //* width: 100%; *//
+    width: 100%;
     height: auto;
     position: absolute;
     bottom: 0;
@@ -203,8 +203,7 @@ body {
         bottom: -40px;
     }
      .h1{
-             font-size: 1.9rem;
-        
+     font-size: 1.3em;   
     }
     
   }
