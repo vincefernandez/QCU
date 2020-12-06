@@ -1,6 +1,9 @@
 body {
     font-family: 'Raleway', sans-serif;
-    background-color: #e7e7e7;
+    background-image: url("background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 .wrapper {
