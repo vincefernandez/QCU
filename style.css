@@ -191,13 +191,13 @@ body {
 .expand {
     transform: translateY(300px);
 }
-@media only screen and (max-width: 479px) {
+@media only screen and (max-width: 640px) {
     .expand {
         transform: translateY(60%);
     }
     .login-text{
         top: -350px;
-        height:60%;
+        height:70%;
     }
     .cta{
         bottom: -40px;
