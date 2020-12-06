@@ -142,7 +142,7 @@ body {
     opacity: 0.6;
     font-weight: bold;
     background-color: #fff;
-    width: 100%;
+    //* width: 100%; *//
     height: auto;
     position: absolute;
     bottom: 0;
@@ -192,9 +192,9 @@ body {
     transform: translateY(60%);
 }
 @media only screen and (max-width: 480px) {
-   /* .expand {
+    .expand {
         transform: translateY(68%);
-    } *//
+    } 
     .login-text{
         top: -350px;
         height: 70%;
@@ -203,8 +203,7 @@ body {
         bottom: -40px;
     }
      .h1{
-        
-       font-size: 1.9em;
+             font-size: 1.9rem;
         
     }
     
