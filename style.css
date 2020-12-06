@@ -1,186 +1,193 @@
-body{
-    margin: 0px;
-    padding: 0px;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #333;
-}
-.header{
-    
-    margin: 0px;
-    padding: 10px;
-    background-color: #2E3136;
-    border-bottom: 3px solid rgb(87, 206, 87);
-   
-
+body {
+    font-family: 'Raleway', sans-serif;
+    background-color: #e7e7e7;
 }
 
-
-.head{
-    cursor: pointer;
-    margin: 0px;
-    margin-bottom: 10px;
-    margin-top: 20px;
-    padding: 0px;
-    color: aliceblue;
-    display: inline-block;
-    font-size: 20px;
-    
-}
-.halfHead{
-    color: aqua;
-}
-.fa-university{
-    color: rgb(114, 248, 4);
-}
-.Univer{
- color:aqua;
-}
-.logInBtnNavBar{
-    float: right;
-    margin: 0px 0px;
-    border: none;
-    background: none;
-    background-color: rgb(56, 164, 231);
-    color: white;
-    padding: 9px;
-    font-size: 90%;
-    letter-spacing: 1px;
-    outline: none;
-    border-radius: 10px;
-    transition: 0.7s;
-    cursor: pointer;
-    width: 15%;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-top: 10px;
-  
-}
-.logInBtnNavBar:hover{
-    color: rgb(114, 248, 4);
-}
-.area{
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    background-color: #2E3136;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-    text-align: center;
-    top: 0;
-    left: 0;
-}
-.navbar{
-   
-   background-color: #333;
-   color:#fff;
-    line-height: 1.6em;
-}
-.container{
-    width: 100%;
-    margin: 5px;
-}
-.fa-angle-double-down{
-    color: aliceblue;
-    font-size: 110%;
-    margin-bottom: 5px;
-}
-.intro{
-    width: 100%;
-    text-align: center;
-    margin-bottom: 50px;
-}
-.welcomeHead{
-    margin: 0 auto;
-    text-align: center;
-    margin-top: 50px;
-    
-
-    font-size: 320%;
-    color:rgb(236, 10, 168);
-    height: 60px;
-    width: 0;
+.wrapper {
+    width: 80%;
+    height: 750px;
+    position: relative;
+    margin: 3% auto;
+    box-shadow: 2px 18px 70px 0px #9D9D9D;
     overflow: hidden;
-    transition: width 0.7s;
 }
-.welcomeSubHead{
+.Welcome{
+    background-color: none;
     
-    text-align: center;
-    margin-top: 20px;
-    color: rgb(7, 250, 250);
-    letter-spacing: 1px;
+    height: 100%;
+    float: right;
+    font-size: 50px;
+    color: wheat;
 }
-.subScribeBtn{
-    background: none;
-    border: none;
-    border: 2px solid rgb(87, 206, 87);
-    font-size: 120%;
-    border-radius: 15px;
-    padding: 10px;
-    padding-top: 12px;
-    color: white;
-    outline: none;
-    transition: 1s;
-    letter-spacing: 1px;
-    margin-top: 15px;
-    cursor: pointer;
+.login-text {
+    border: 6px solid orange;
+    width: 100%;
+    height:80%;
+    background: linear-gradient(to left, #58a7e7, #221522); 
+    position: absolute;
+    top: -300px;
+    box-sizing: border-box;
+    padding: 2%;
+    transition: all 0.5s ease-in-out;
+    z-index: 11;
 }
-.subScribeBtn:hover{
-    background-color: rgb(87, 206, 87);
-    color: white;
-} 
-/* img{
-   
-   width: 90%;
-   height: 500px;
-	
-} */
-/* .mainPicture{
-    margin-top: 5%;
-} */
 
-@media only screen and (max-width: 550px) {
-    .welcomeHead{
-              color:rgb(236, 10, 168);
-              font-size: 30px;
-              height:30px;
-              
-
-    }
-    .header{
-        padding-bottom: 20px;
-    }
-}
-@media only screen and (max-width: 479px){
-    
-    .header{
-        padding-bottom: 20px;
-    }
-    .welcomeHead{
-        color:rgb(236, 10, 168);
+.text {
+    margin-left: 10%;
+    color: #fff;
+    display: none;
+    transition: all 0.5s ease-in-out;
+    transition-delay: 0.3s;
+}   
+    .login{
+        float: left;
         font-size: 30px;
-        height:30px;
-
     }
-}
-    .foot{
+    p{
+        margin: 0%;
+        padding: 0%;
+        font-size: 40px;
+        text-align: center;
+        color: springgreen;
+    }
+    a, a:visited {
+        font-size: 36px;
+      color: #fff;
+        text-decoration: none;  
+        font-weight: bold;
+        display: block;
+    }
+
+   
+
+    input {
+        margin-top: 20px;
+        height: 10%;
+        width: auto;
+        border-radius: 2px;
+        border: none;
+        background-color: rgb(240, 240, 241);
+        opacity: 0.6;
+        outline: none;
+        color: #fff;
+        padding-left: 10px;
+        font-size: 30px;;
+    }
+
+    input[type=text] {
+        color: black;
+        margin: auto;
+        width: auto;
         
+    }
+    input[type=password] {
+        color: black;
+    }
+
+
+    button{
+        margin: 3%;
+        height: 20px;
+    }
+
+    .Admin {
        
-            cursor: pointer;
-            margin: 0px;
-            margin-top: 20px;
-            padding: 0px;
-            color: aliceblue;
-            display: inline-block;
-            font-size: 20px;
+        background: transparent;
+        border: 2px solid #fff;;
+        border-radius: auto;
+        color: #fff;
+        
+        
+    }
+    .Admin:hover{
+        border: solid 5px #fff;
+        height: auto;
+    }
+
+    .Student {
+      
+        background: transparent;
+        border: 2px solid #fff;
+        border-radius: auto;
+        color: #fff;
+        
+     
+    }
+    .Student:hover{
+        border: solid 5px #fff;
+        height: auto;
+    }
+
+
+.cta {
+    margin-top: 20px;
+    width: auto;
+    height: 15%;
+    background: #696a86;
+    border: solid 5px white;
+    position: absolute;
+    bottom: -60px;
+    left: 40%;
+    color: rgb(12, 12, 12);
+    outline: none;
+    cursor: pointer;
+    z-index: 11;
+    font-size: 20px;
+}
+
+.call-text {
+    background-color: #fff;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    padding: 10%;
+    box-sizing: border-box;
+    text-align: center;
+}
+    .header{
+        font-size: 60p;
+    }
+    h1 {
+        font-size: 40px;
+        margin-top: 10%;
+        color: #696a86;
+        font-size: 1.6em;
+        font-weight: bolder;
+        font-style: bold;
+    }
+        span {
+            color: #333333;
+            font-weight: normal;
             
         }
     
-    .foot {
-        border-top: 3px solid rgb(87, 206, 87);
-        width: 100%;
+
+    .Visit {
+        height: 60px;
+        width: 120px;
+        border: none;
+        border-radius: 20px;
+        background: linear-gradient(to left, #020102, #33011a); 
+        color: #fff;
+        font-weight: bolder;
+       
+        cursor: pointer;
+        outline: none;
     }
-    .foot .butangina{
-       float: right;
+   
+
+.show-hide {
+    display: block;
+}
+
+.expand {
+    transform: translateY(300px);
+}
+@media only screen and (max-width: 479px) {
+    .expand {
+        transform: translateY(60%);
     }
-    
+  }
+  
+  
