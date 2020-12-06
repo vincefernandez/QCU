@@ -125,9 +125,9 @@ body {
 .cta {
     margin-top: 20px;
     width: auto;
-    height: 15%;
+    height: 10%;
     background: #696a86;
-    border: solid 5px white;
+    border: solid 2px white;
     position: absolute;
     bottom: -60px;
     left: 40%;
@@ -139,6 +139,8 @@ body {
 }
 
 .call-text {
+    opacity: 0.6;
+    font-weight: bold;
     background-color: #fff;
     width: 100%;
     height: auto;
@@ -152,16 +154,18 @@ body {
         font-size: 60p;
     }
     h1 {
+        
         font-size: 40px;
         margin-top: 10%;
-        color: #696a86;
+        color: aqua;
         font-size: 1.6em;
         font-weight: bolder;
         font-style: bold;
     }
         span {
-            color: #333333;
-            font-weight: normal;
+            color: #000000;
+            font-weight: bolder;
+            font-style: bold;
             
         }
     
@@ -190,6 +194,12 @@ body {
 @media only screen and (max-width: 479px) {
     .expand {
         transform: translateY(60%);
+    }
+    .login-text{
+        top: -350px;
+    }
+    .cta{
+        bottom: -40px;
     }
   }
   
