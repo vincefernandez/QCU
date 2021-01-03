@@ -51,6 +51,11 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
   captionText.innerHTML = dots[slideIndex-1].alt;
 }
+
+function myFunction(){
+  alert("not yet done ")
+}
+
 // window.addEventListener('scroll',() => {
 //     const scrollable = document.documentElement.scrollHeight - window.innerHeight;
 //     const scroll = window.scrollY;

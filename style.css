@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    padding: 0;
 }
 body {
     font-family: 'Raleway', sans-serif;
@@ -227,10 +228,12 @@ body {
 }
 .title{
     text-align: center;
-    margin-left: 20%;
+   
     font-size: 1.6em;
     display: flex;
-    color: black;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 .SlidesContainer{
@@ -261,20 +264,20 @@ left: 5%;
     -webkit-user-select: none;
   }
   
-  /* Position the "next button" to the right */
+  
   .next {
     right: 0;
     border-radius: 3px 0 0 3px;
   }
   
-  /* On hover, add a black background color with a little bit see-through */
+ 
   .prev:hover,
   .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
    
   }
   
-  /* Number text (1/3 etc) */
+
   .numbertext {
     color: #f0d7d7;
     font-size: 30px;
@@ -284,7 +287,7 @@ left: 5%;
     right: 2px;
   }
   
-  /* Container for image text */
+ 
   .caption-container {
     text-align: center;
     background-color: #222;
@@ -299,13 +302,13 @@ left: 5%;
     clear: both;
   }
   
-  /* Six columns side by side */
+ 
   .column {
     float: left;
     width: 16.66%;
   }
   
-  /* Add a transparency effect for thumnbail images */
+ 
   .demo {
     opacity: 0.6;
   }
@@ -319,8 +322,42 @@ left: 5%;
         width: 100%;
     
   }
+  #headershit{
+    position: fixed;
+     top: 0px;
+     margin-right: 20%;
+     width: 100%;
+     font-size: 20px;
 
-
+     box-shadow: 2px 18px 70px 0px #9D9D9D;
+  }
+  #headddd{
+    display: flex;
+   
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 10px;
+  }
+  
+  .ul{
+      display: flex;
+      
+     
+  }
+  .li{
+      
+      display: flex;
+     width: 40%;
+    
+      background-color: teal;
+      justify-content: space-between;
+     padding: 0px 0 0px 20px;
+      
+     
+  }
+ .li a{
+     font-size: 20px;
+ }
 @media only screen and (max-width: 480px) {
     .expand {
         transform: translateY(70%);
@@ -343,5 +380,3 @@ left: 5%;
         font-size: 1.6rem;
     }
   }
-  
-  
