@@ -335,7 +335,9 @@ left: 5%;
         font-size: 1.6em;
         
     }
-    
+    .login-text {
+        border: 6px solid orange;
+    }
     .title{
         font-size: 1.6rem;
     }
