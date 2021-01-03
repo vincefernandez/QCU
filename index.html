@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link rel="stylesheet"  href="style.css">
+    <link rel="stylesheet"  href="css.css">
     <link rel="stylesheet" href="animationAlert/animation.css">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">;
     <title>Quezon City University</title>
 </head>
 <body>
   
-    <div class="wrapper">
+    <div class="wrapper ">
     
       <div class="header">
           
@@ -41,19 +41,89 @@
           </div>
           </div>
         <div class="call-text">
-          <h1 class="h1">Quezon City University Portal <span>
+          <h1 class = "h1">Quezon City University Portal <span>
             is a gateway for online student information, lectures, discussions, resources and other services exclusive to QCU students.
             
             It aims to enhance and extend the students' learning experience through information technology beyond the bounds of the classroom.
           
           </span>
            </h1>
-          <button class="Visit" onclick="alert('Under Construction')"><i class="fa fa-chevron-down" aria-hidden="true"></i>  Visit QCU</button>
+        <a href =#mainDoor> <button class="Visit"><i class="fa fa-chevron-down" aria-hidden="true"></i>  Visit QCU</button></a></a>
         </div>
       </div>
       </div>
     </div>
-   
+<!--  MAIN Course  
+    -->
+    <div class= 'mainPage' id="mainPage">
+<div class="Intro" id='intro1'>
+ 
+<h1 class = "title">Quezon City University </h1>
+</div>
+
+<div class="SlidesContainer">
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+    <img class="image1 " src="qcu1.jpg" style="width:80%" >
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+    <img class="image1 "  src="qcu2.jpg" style="width:80%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+    <img class="image1 " src="qcu8.jpg" style="width:80%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+    <img class="image1 " src="qcu4.jpg" style="width:80%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+    <img class="image1" src="qcu5.jpg" style="width:80%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+    <img class="image1" src="qcu6.jpg" style="width:50%">
+  </div>
+ 
+ 
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor " src="qcu1.jpg" style="width:50%" onclick="currentSlide(1)">
+    </div>
+    <div class="column">
+      <img class="demo cursor " src="qcu2.jpg" style="width:50%" onclick="currentSlide(2)">
+    </div>
+    <div class="column">
+      <img class="demo cursor " src="qcu8.jpg" style="width:50%" onclick="currentSlide(3)">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="qcu4.jpg" style="width:50%" onclick="currentSlide(4)">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="qcu5.jpg" style="width:50%" onclick="currentSlide(5)">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="qcu6.jpg" style="width:50%" onclick="currentSlide(6)">
+  
+    
+  </div>
+</div>
+</div>
+
     <script src="function.js"></script>
 </body>
 </html>
