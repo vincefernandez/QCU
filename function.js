@@ -56,6 +56,8 @@ function myFunction(){
   alert("not yet done ")
 }
 
+
+
 // window.addEventListener('scroll',() => {
 //     const scrollable = document.documentElement.scrollHeight - window.innerHeight;
 //     const scroll = window.scrollY;
