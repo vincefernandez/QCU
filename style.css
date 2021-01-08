@@ -56,12 +56,14 @@ body {
 .AvatarPic{
     display: flex;
     cursor: pointer;
-    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
     margin-right: 20%;
     float: left;
     margin-left: 3%;
-    width:  200px;      
-    height: 200px;
+    width:  100px;      
+    height: 100px;
     object-fit: cover;
 }
 .btnAccess{
@@ -70,7 +72,7 @@ body {
     margin-top: 30px;
     height: auto;
     width: auto;
-    font-size: 30px;
+    font-size: 20px;
     background-color: transparent;
     border:none;
     box-shadow: white 0px 3px 0px 3px;
