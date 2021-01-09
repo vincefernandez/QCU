@@ -20,7 +20,7 @@ body {
 }
 .wrapper {
     width: 80%;
-    height: 630px;
+    height: 600px;
     position: relative;
     margin: 3% auto;
     box-shadow: 2px 18px 70px 0px #9D9D9D;
@@ -53,6 +53,7 @@ body {
     justify-content: space-between;
     align-items: center;
 }
+
 .AvatarPic{
     display: flex;
     cursor: pointer;
@@ -69,13 +70,16 @@ body {
 .btnAccess{
     
     cursor: pointer;
-    margin-top: 30px;
+    margin-top: 20px;
     height: auto;
     width: auto;
-    font-size: 20px;
+    font-size: 0px;
     background-color: transparent;
     border:none;
     box-shadow: white 0px 3px 0px 3px;
+}
+.none{
+    color: black;
 }
 .fa-arrow-right{
     color:rgb(236, 241, 231);
@@ -174,7 +178,7 @@ body {
 .cta {
     margin-top: 20px;
     width: auto;
-    height: 5%;
+    height: auto;
     background: #696a86;
     border: solid 2px white;
     position: absolute;
@@ -437,5 +441,9 @@ left: 5%;
     }
     .title{
         font-size: 1.6rem;
+    }
+    .AvatarPic{
+        margin-top: 5px;
+        font-size: 10px;
     }
   }
