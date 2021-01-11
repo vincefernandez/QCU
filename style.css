@@ -73,7 +73,7 @@ body {
     float: left;
     margin-left: 3%;
     width:  200px;      
-    height: 200px;
+    height: 150px;
     object-fit: cover;
 }
 .btnAccess{
@@ -81,19 +81,22 @@ body {
     cursor: pointer;
     margin-top: 20px;
     height: auto;
-    width: auto;
-    font-size: 0px;
+  
     background-color: transparent;
     border:none;
     box-shadow: white 0px 3px 0px 3px;
+}
+.btnAccess a{
+    font-size: 30px;
 }
 .none{
     color: black;
 }
 .fa-arrow-right{
+    
     color:rgb(236, 241, 231);
     cursor: pointer;
-    margin-left: 20px;
+    float:right;
 }
 .text {
     margin-left: 10%;
@@ -457,9 +460,9 @@ left: 5%;
     }
     .AvatarPic{
         margin-top: 5px;
-        font-size: 10px;
-        height: 50px;
-        width: 50px;
+       
+        width:  100px;      
+        height: 100px;
     
     }
   }
