@@ -1,5 +1,6 @@
 var cta = document.querySelector(".cta");
 var i = document.querySelector("i");
+const Scrolldown = document.querySelector(".visit1");
 var check = 2;
 
 cta.addEventListener('click', function(e){
@@ -22,7 +23,10 @@ cta.addEventListener('click', function(e){
         check = 0;
     }
 })
-
+Scrolldown.addEventListener('click',function(e){
+  if(Scrolldown === true){
+    document.querySelector('body').style.overflow='scroll'};
+})
 var slideIndex = 1;
 showSlides(slideIndex);
 
@@ -55,6 +59,8 @@ function showSlides(n) {
 function myFunction(){
   alert("not yet done ")
 }
+document.querySelector('.Visit').addEventListener('click',function (){
+  document.querySelector('body').style.overflow='scroll'});
 
 
 
