@@ -1,0 +1,61 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 20px;
+    font-family: sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
+  .MainHeader{
+      padding-bottom: 200px;
+  }
+  .wrapper {
+    
+    width: 80%;
+    height: 600px;
+    position: relative;
+    margin: 3% auto;
+    box-shadow: 2px 18px 70px 0px #9D9D9D;
+   overflow:hidden;
+ 
+   
+}
+.header{
+    width: 80%;
+    height: 500px;
+    margin: 3% auto;
+    border: 5px solid black;
+    text-align: center;
+    padding-top: 5%;
+    box-shadow: 2px 18px 70px 0px black;
+}
+.login{
+    padding-top: 15%;
+   
+}
+.login input{
+   width: 30%;
+}
+::placeholder{
+    text-align: center;
+}
+.submit{
+    padding-top: 5%;
+}
+.table{
+    width: 100%;
+    border-collapse: collapse;
+    border: 5px solid black;
+}
+.table td,  .table, th{
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+}

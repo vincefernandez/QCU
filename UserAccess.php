@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="qcu9.png">
+    <link rel="stylesheet"  href="PHP.css">
+    <link rel="stylesheet" href="animationAlert/animation.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">.
+</head>
+<body>
+
+<a href="LoginForstudent.php"><button style="float: left; color: black"><i class="fas fa-chevron-left fa-2x"></i>Back</button></a>
+    <center>
+      <div class="MainHeader">
+    Hello : <?php
+
+    echo $_POST["studno"];
+    ?>
+    </div>
+  
+   <!-- <div class="wrapper"> -->
+       
+       <!-- <div class="header">
+        
+            <h1>Student Access</h1>
+         <div class="login"><input type="text" placeholder="Please type Student Number" name="studno">
+         <br>
+         <div class="submit"><button><input type="submit" name="submit"></button>
+         
+            
+   </div> -->
+   </center>    
+  <?php
+ $servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "classlist";
+$Student_Number = $_POST['studno'];
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+if($Student_Number == 0 ){
+  echo "Please try Again!";
+}
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+// if(isset($_GET['submit'])){
+//     $id = $_GET['studno'];
+//     $sql = "Select * from studentable where id=$id";
+// }
+$sql = "Select * from classstudent where ID = $Student_Number"; 
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // output data of each rowx
+    
+   
+      
+    ?>
+      
+    <table class="table">
+      
+   <center> <h1>   Student Informations ! </h1></center>
+    <thead>
+
+      <th>StudentNumber</th>
+      <th>Campus</th> 
+      <th>Last Name</th>
+      <th>First Name</th>
+      <th>Middle Name</th>
+      <th>Description</th>
+      <th>Section</th>
+      <th>Day</th>
+      <th>Email</th>
+    </thead>
+    <tbody>
+  <tr>
+ <?php  while($row = $result->fetch_assoc()) { ?>
+  <td ><?php echo $row['Student_Number']; ?> </td>
+  <td > <?php echo $row['Campus']; ?> </td>
+  <td > <?php echo $row['Last_Name']; ?> </td>
+  <td > <?php echo $row['First_Name']; ?> </td>
+  <td>  <?php echo $row['Middle_Name']; ?> </td>
+  <td>  <?php echo $row['Description']; ?> </td>
+  <td > <?php echo $row['Section']; ?> </td>
+  <td><?php echo $row['Day']; ?> </td>
+  <td> <?php echo $row['Email']; ?> </td>
+  </tr>
+    </tbody>
+  
+  
+  <?php
+   
+     }
+     } else {
+        echo "0 results";
+     } 
+     ?>
+  <div class="textarea">
+     <P> THIS IS WHERE PEOPLE SHOULD COMMENT</P>
+    <textarea name="Text" id="" cols="200" rows="10"></textarea>
+  </div>
+  
+<?php
+  $conn->close();
+  ?>
+
+</body>
+</html>
