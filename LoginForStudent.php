@@ -10,10 +10,13 @@
     <link rel="shortcut icon" type="image/x-icon" href="qcu9.png">
     <link rel="stylesheet"  href="AdminAccess.css">
     <link rel="stylesheet" href="animationAlert/animation.css">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">.
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<a href="index.html"><button style="float: left; color: black"><i class="fas fa-chevron-left fa-2x"></i>Back</button></a>
+<a href="index.html"><button style="position:fixed; display:inline; float: left; color: black"><span class="glyphicon glyphicon-hand-left"> Go Back!</span></button></a>
     <form method="POST" action="UserAccess.php">
     
    <div class="wrapper">
