@@ -76,18 +76,8 @@
   
      
   <?php
- $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "classlist";
+include ('connection.php');
 $Student_Number = $_POST['studno'];
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-
 $sql = "Select * from haha where ID = $Student_Number"; 
 $result = $conn->query($sql);
 
