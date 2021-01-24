@@ -1,3 +1,5 @@
+<?php  session_start() ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +28,7 @@
             <h1>Student Access</h1>
          <div class="login"><input type="number" placeholder="Please type Student Number" name="studno" required>
          <br>
-         <div class="submit"><input type="submit" name="submit"></button>
+         <div class="submit"><input type="submit" value="submit" name="submit"></button>
          
             
    </div>
@@ -38,6 +40,12 @@
 
    </form>
    
+   <?php 
+// starting the session
 
+if (isset($_POST['studno'])) { 
+$_SESSION['studno'] = $_POST['Submit'];
+} 
+?> 
 </body>
 </html>

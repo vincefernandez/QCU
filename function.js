@@ -60,26 +60,8 @@ function myFunction(){
   alert("not yet done ")
 }
 document.querySelector('.Visit').addEventListener('click',function (){
-  document.querySelector('body').style.overflow='scroll'});
+  document.querySelector('body').style.overflow='scroll'}
+  );
 
 
 
-// window.addEventListener('scroll',() => {
-//     const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-//     const scroll = window.scrollY;
-//     if(Math.ceil(scroll) === scrollable){
-//         alert ('nice');
-//     }
-// })
-
-// function disableScroll() { document.body.style.overflow="hidden";  }
-// disableScroll();)
-
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}

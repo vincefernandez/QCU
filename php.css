@@ -80,8 +80,12 @@ html {
   color: black;
 }
 
-
-
+.rightLogout{
+  right: 0%;
+  display: flex;
+  justify-content: right;
+  align-items: flex-end;
+}
 @media(max-width: 480px){
   .table thead{
 display: none;

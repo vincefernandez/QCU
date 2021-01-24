@@ -1,4 +1,4 @@
-
+<?php  session_start()?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,16 +18,9 @@
 <body>
 
 <a href="LoginForstudent.php"><button class="BackButtonTop"><span class="glyphicon glyphicon-hand-left"> Go Back!</span></button></a><br><br>
-    <center>
-       <!-- <div class="MainHeader">
-    Hello : <?php /*
-
-    echo $_POST["studno"];
-    */
-    ?>
-    </div> */ -->
-
    
+   
+
 
 
 
@@ -39,16 +32,17 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand">Hello <?php
-      echo $_POST["studno"];
+      $_SESSION['user'] = $_POST['studno'];
+      echo $_SESSION['user'];
 ?></a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href=#MainHeader>Home</a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Request For <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Transcript of Records</a></li>
-          <li><a href="#">Grade Slip</a></li>
-          <li><a href="#">Registration Form </a></li>
+          <li><a href="CommentForm.php">Transcript of Records</a></li>
+          <li><a href="CommentForm.php">Grade Slip</a></li>
+          <li><a href="CommentForm.php">Registration Form</a></li>
         </ul>
       </li>
      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Contact Our Administrations!<span class="caret"></span></a>
@@ -61,7 +55,7 @@
     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Contact Numbers <span class="caret"></span></a>
         <ul class="dropdown-menu">
           
-        <li><a href="#">Transcript of Records</a></li>
+        <li><a href="CommentForm.php">Registration Form</a></li>
         </ul>
       </li> 
           
@@ -80,7 +74,7 @@
 
     </div>
   
-   </center>    
+     
   <?php
  $servername = "localhost";
 $username = "root";
@@ -93,15 +87,12 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-// if(isset($_GET['submit'])){
-//     $id = $_GET['studno'];
-//     $sql = "Select * from studentable where id=$id";
-// }
-$sql = "Select * from classstudent where ID = $Student_Number"; 
+
+$sql = "Select * from haha where ID = $Student_Number"; 
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // output data of each rowx
+ 
     
    
       
@@ -126,14 +117,14 @@ if ($result->num_rows > 0) {
   <tr>
  <?php  while($row = $result->fetch_assoc()) { ?>
   <td class="Info"><?php echo $row['Student_Number']; ?> </td>
-  <td class="Info">> <?php echo $row['Campus']; ?> </td>
-  <td class="Info">> <?php echo $row['Last_Name']; ?> </td>
-  <td class="Info"> > <?php echo $row['First_Name']; ?> </td>
-  <td class="Info">>  <?php echo $row['Middle_Name']; ?> </td>
-  <td class="Info">>  <?php echo $row['Description']; ?> </td>
-  <td  class="Info">> <?php echo $row['Section']; ?> </td>
-  <td class="Info">><?php echo $row['Day']; ?> </td>
-  <td class="Info">> <?php echo $row['Email']; ?> </td>
+  <td class="Info"> <?php echo $row['Campus']; ?> </td>
+  <td class="Info"> <?php echo $row['Last_Name']; ?> </td>
+  <td class="Info"> <?php echo $row['First_Name']; ?> </td>
+  <td class="Info">  <?php echo $row['Middle_Name']; ?> </td>
+  <td class="Info">  <?php echo $row['Description']; ?> </td>
+  <td  class="Info"> <?php echo $row['Section']; ?> </td>
+  <td class="Info"><?php echo $row['Day']; ?> </td>
+  <td class="Info"> <?php echo $row['Email']; ?> </td>
   </tr>
   
  
