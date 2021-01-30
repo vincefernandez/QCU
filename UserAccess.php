@@ -1,4 +1,11 @@
-<?php  session_start()?>
+<?php 
+session_start();
+$student = $_SESSION['studno'];
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,31 +17,30 @@
     <link rel="shortcut icon" type="image/x-icon" href="qcu9.png">
     <link rel="stylesheet" href="php.css">
     <link rel="stylesheet" href="animationAlert/animation.css">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">.
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+<?php 
 
-<a href="LoginForstudent.php"><button class="BackButtonTop"><span class="glyphicon glyphicon-hand-left"> Go Back!</span></button></a><br><br>
+?>
+<form action="LoginForStudent.php" method="post">
+<button class="BackButtonTop"><span class="glyphicon glyphicon-hand-left"> Go Back!</span></button></a><br><br>
+</form>
    
-   
 
 
 
 
 
-
-    <div class="RequestingForFile">
     
     <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand">Hello <?php
-      $_SESSION['user'] = $_POST['studno'];
-      echo $_SESSION['user'];
-?></a>
+      <a class="navbar-brand">Hello <?php echo $student; ?>
+</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="active"><a href=#MainHeader>Home</a></li>
@@ -47,9 +53,10 @@
       </li>
      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Contact Our Administrations!<span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Transcript of Records</a></li>
-          <li><a href="#">Grade Slip</a></li>
-          <li><a href="#">Registration Form </a></li>
+          <li><a href="#">IT Department</a></li>
+          <li><a href="#">Accountancy Department</a></li>
+          <li><a href="#">Entrepreneur Department</a></li>
+          <li><a href="#">Engineering Department</a></li>
         </ul>
       </li> 
     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Contact Numbers <span class="caret"></span></a>
@@ -72,13 +79,14 @@
   
 
 
-    </div>
+   
   
      
   <?php
+
 include ('connection.php');
-$Student_Number = $_POST['studno'];
-$sql = "Select * from haha where ID = $Student_Number"; 
+
+$sql = "Select * from haha where ID = $student";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -104,8 +112,9 @@ if ($result->num_rows > 0) {
       <th>Email</th>
     </thead>
     <tbody>
-  <tr>
+  
  <?php  while($row = $result->fetch_assoc()) { ?>
+  <tr>
   <td class="Info"><?php echo $row['Student_Number']; ?> </td>
   <td class="Info"> <?php echo $row['Campus']; ?> </td>
   <td class="Info"> <?php echo $row['Last_Name']; ?> </td>

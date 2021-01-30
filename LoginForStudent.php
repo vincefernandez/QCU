@@ -1,5 +1,11 @@
-<?php  session_start();
-include ('connection.php'); 
+<?php
+include 'connection.php';
+if(isset($_POST['studno'])){
+  session_start();
+  $_SESSION['studno'] = htmlentities($_POST['studno']);
+
+header('Location: UserAccess.php');
+}
 ?>
 
 
@@ -21,7 +27,7 @@ include ('connection.php');
 </head>
 <body>
 <a href="index.html"><button style="position:fixed; display:inline; float: left; color: black"><span class="glyphicon glyphicon-hand-left"> Go Back!</span></button></a>
-    <form method="POST" action="UserAccess.php">
+    <form method="POST" action="<?php echo $_SERVER['PHP_SELF']?>">
     
    <div class="wrapper">
        
@@ -42,12 +48,6 @@ include ('connection.php');
 
    </form>
    
-   <?php 
-// starting the session
-
-if (isset($_POST['studno'])) { 
-$_SESSION['studno'] = $_POST['Submit'];
-} 
-?> 
+  
 </body>
 </html>
