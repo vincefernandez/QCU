@@ -1,7 +1,16 @@
 <?php 
+include('connection.php');
 session_start();
 $student = $_SESSION['studno'];
 
+
+$email1 = $_SESSION['email'];
+$studno1 = $_SESSION['studNumber'];
+$firstname1 = $_SESSION['firstname'];
+$lastname1 = $_SESSION['lastname'];
+$campus1 = $_SESSION['campus'];
+$subject1 = $_SESSION['subject'];
+$form1 = $_SESSION['form'];
 
 
 
@@ -46,7 +55,7 @@ $student = $_SESSION['studno'];
       <li class="active"><a href=#MainHeader>Home</a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Request For <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="CommentForm.php">Transcript of Records</a></li>
+          
           <li><a href="CommentForm.php">Grade Slip</a></li>
           <li><a href="CommentForm.php">Registration Form</a></li>
         </ul>
@@ -59,10 +68,10 @@ $student = $_SESSION['studno'];
           <li><a href="#">Engineering Department</a></li>
         </ul>
       </li> 
-    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Contact Numbers <span class="caret"></span></a>
+    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="request.php">Your Request Form <span class="caret"></span></a>
         <ul class="dropdown-menu">
           
-        <li><a href="CommentForm.php">Registration Form</a></li>
+        <li><a href="request.php">Your Request Form..</a></li>
         </ul>
       </li> 
           
@@ -110,6 +119,7 @@ if ($result->num_rows > 0) {
       <th>Section</th>
       <th>Day</th>
       <th>Email</th>
+      <th>Fileupload</th>
     </thead>
     <tbody>
   
@@ -124,6 +134,7 @@ if ($result->num_rows > 0) {
   <td  class="Info"> <?php echo $row['Section']; ?> </td>
   <td class="Info"><?php echo $row['Day']; ?> </td>
   <td class="Info"> <?php echo $row['Email']; ?> </td>
+  <td class="Info"> <?php echo $row['File']; ?> </td>
   </tr>
   
  

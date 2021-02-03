@@ -15,8 +15,8 @@ $_SESSION['lastname'] = htmlentities(($_POST['lastname']));
 $_SESSION['subject'] = htmlentities(($_POST['subject']));
 $_SESSION['campus'] = htmlentities(($_POST['campus']));
 $_SESSION['form'] = htmlentities(($_POST['form']));
-header('Location: reciever.php');
-
+header('Location: CommentForm.php');
+// header('Location: UserAccess.php');
 
 
 $email1 = $_SESSION['email'];
@@ -27,13 +27,16 @@ $campus1 = $_SESSION['campus'];
 $subject1 = $_SESSION['subject'];
 $form1 = $_SESSION['form'];
 include('connection.php');
+
+$msg = "Send Successful";
 $sql = "INSERT INTO formtable (email,Student_Number,firstname,lastname,campus,form,message)
 VALUES ('$email1', '$studno1', '$firstname1','$lastname1','$campus1','$subject1','$form1')";
 if ($conn->query($sql) === TRUE) {
-  echo "New record created successfully";
+  echo "<script type='text/javascript'>alert('$msg');</script>";
 } else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
+  echo "<script type='text/javascript'>alert('error');</script>" . $sql . "<br>" . $conn->error;
 }
+
 }
 $conn->close();
 ?>
@@ -71,7 +74,7 @@ $conn->close();
         <label for="Email">Email Address</label>
       </div>
       <div class="col-75">
-        <input type="text" id="Email" name="email" placeholder="Your Student Email...">
+        <input type='text' id='Email' name='email' placeholder='Your Student Email...' required>
       </div>
     </div>
   <div class="row">
@@ -79,7 +82,7 @@ $conn->close();
         <label for="studnumber">Student Number</label>
       </div>
       <div class="col-75">
-        <input type="number" name="studNumber" placeholder="Your Student No...">
+     <input type='number' name='studNumber' placeholder='Your Student No...' required >
       </div>
     </div>
     <div class="row">
@@ -87,7 +90,7 @@ $conn->close();
         <label for="fname">First Name</label>
       </div>
       <div class="col-75">
-        <input type="text" id="fname" name="firstname" placeholder="Your First Name..">
+        <input type="text" id="fname" name="firstname" placeholder="Your First Name.." required>
       </div>
     </div>
     <div class="row">
@@ -95,7 +98,7 @@ $conn->close();
         <label for="lname">Last Name</label>
       </div>
       <div class="col-75">
-        <input type="text" id="lname" name="lastname" placeholder="Your Last name..">
+        <input type="text" id="lname" name="lastname" placeholder="Your Last name.." required>
       </div>
     </div>
     <div class="row">
@@ -104,8 +107,8 @@ $conn->close();
       </div>
       <div class="col-75">
      
-        <select id="country" name="campus">
-        <option value="" disabled selected hidden>Select Campus..</option>
+        <select id="country" name="campus" required>
+        <option value="" disabled selected hidden>Select Campus..</option required>
           <option value="San Bartolome">San Bartolome</option>
           <option value="Batasan">Batasan</option>
           <option value="SanFrancisco">San Francisco</option>
@@ -118,8 +121,8 @@ $conn->close();
       </div>
       <div class="col-75">
      
-        <select id="country" name="form">
-        <option value="" disabled selected hidden>Select Campus..</option>
+        <select id="country" name="form" required>
+        <option value="" disabled selected hidden>Select Campus..</option required> 
           <option value="Regform">Registration Form</option>
           <option value="Tor">Transcript of Records</option>
           <option value="StudID">Student ID</option>
@@ -136,7 +139,7 @@ $conn->close();
       </div>
     </div>
     <div class="row">
-      <input type="submit" value="Submit" name="FormSubmitting">
+      <input type="submit" value="Submit" name="FormSubmitting" >
     </div>
     </div>
   </form>
