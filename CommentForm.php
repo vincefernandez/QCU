@@ -32,9 +32,9 @@ $msg = "Send Successful";
 $sql = "INSERT INTO formtable (email,Student_Number,firstname,lastname,campus,form,message)
 VALUES ('$email1', '$studno1', '$firstname1','$lastname1','$campus1','$subject1','$form1')";
 if ($conn->query($sql) === TRUE) {
-  echo "<script type='text/javascript'>alert('$msg');</script>";
+  echo 'Successfully Send Request';
 } else {
-  echo "<script type='text/javascript'>alert('error');</script>" . $sql . "<br>" . $conn->error;
+  echo '<script>alert("You have an Error!")</script>'; 
 }
 
 }
@@ -122,7 +122,7 @@ $conn->close();
       <div class="col-75">
      
         <select id="country" name="form" required>
-        <option value="" disabled selected hidden>Select Campus..</option required> 
+        <option value="" disabled selected hidden>Select Requirements..</option required> 
           <option value="Regform">Registration Form</option>
           <option value="Tor">Transcript of Records</option>
           <option value="StudID">Student ID</option>

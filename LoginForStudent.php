@@ -34,14 +34,14 @@ header('Location: UserAccess.php');
        <div class="header">
         
             <h1>Student Access</h1>
-         <div class="login"><input type="number" placeholder="Please type Student Number" name="studno" required>
+         <div class="login"><input type="number" placeholder="Please type Student Number" name="studno" required></div>
          <br>
-         <div class="submit"><input type="submit" value="submit" name="submit"></button>
+         <div class="submit"><input type="submit" value="submit" name="submit" ></button>
          
             
    </div>
-
-
+         
+       </div></div>
 
 
 

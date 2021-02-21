@@ -1,34 +1,50 @@
-<?php include 'filesLog.php';?>
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
- 
-  <title>Download files</title>
-</head>
-<body>
+<?php 
+/*
+if(!empty($_GET['file'])){
+  $filename = basename($_GET['file']);
+  $filepath = "hays/".$filename;
 
-<table>
-<thead>
-    <th>ID</th>
-    <th>Filename</th>
-    <th>size (in mb)</th>
-    <th>Downloads</th>
-    <th>Action</th>
-</thead>
-<tbody>
-  <?php foreach ($files as $file): ?>
-    <tr>
-      <td><?php echo $file['id']; ?></td>
-      <td><?php echo $file['name']; ?></td>
-      <td><?php echo floor($file['size'] / 1000) . ' KB'; ?></td>
-      <td><?php echo $file['downloads']; ?></td>
-      <td><a href="downloads.php?file_id=<?php echo $file['id'] ?>">Download</a></td>
-    </tr>
-  <?php endforeach;?>
+  if(!empty($filename) && file_exists($filepath)){
+    header("Cache-Control: public");
+    header("Content-Description: File Transfer");
+    header("Content-Disposition: attachment; filename=$filename");
+    header("Content-Type: application/zip");
+    header("Content-Transfer-Encoding: binary");
+    header('Cache-Control: must-revalidate');
+    header('Pragma: public');
+    header('Content-Length: ' . filesize($filename));
 
-</tbody>
-</table>
+    readfile($filename);
+    exit;
+  }
+  else{
+    echo "File not exist";
+  }
+}
 
-</body>
-</html>
+*/
+
+
+if(!empty($_GET['file'])){
+  
+  $filename = basename($_GET['file']);
+  $filepath = "hays/".$filename;
+
+  if(!empty($filename) && file_exists($filepath)){
+    header('Content-Description: File Transfer');
+    header('Content-Type: application/octet-stream');
+    header('Content-Disposition: attachment; filename=' . basename($filepath));
+    header('Expires: 0');
+    header('Cache-Control: must-revalidate');
+    header('Pragma: public');
+    header('Content-Length: ' . filesize('hays/' . $file['name']));
+    readfile('hays/' . $file['name']);
+
+    readfile($filename);
+    exit;
+  }
+  else{
+    echo "File not exist";
+  }
+}
+?>

@@ -1,12 +1,36 @@
 <?php
 include 'connection.php';
-if(isset($_POST['studno'])){
-  session_start();
-  $_SESSION['studno'] = htmlentities($_POST['studno']);
+if(isset($_POST['submit'])){
 
-header('Location: AdminAccess.php');
+$user = $_POST['user'];
+$pass = $_POST['pass'];
+
+$user = stripcslashes($user);  
+$pass = stripcslashes($pass);  
+$user = mysqli_real_escape_string($conn, $user);  
+$pass = mysqli_real_escape_string($conn, $pass); 
+
+$sql = "select *from admin where username = '$user' and password = '$pass'";  
+$result = mysqli_query($conn, $sql);  
+ 
+while($row=mysqli_fetch_array($result)){
+ 
+
+if($user === $row['username']){
+if($pass === $row['password']){
+  echo"<script> alert('Successfully Login'); </script>";
+  header('location: AdminAccess.php');
+}else{ 
+  echo "Wrong Password";
+ }
+}else{
+  echo "Wrong Username";
+
 }
-?>
+}
+
+}
+?>  
 
 
 <!DOCTYPE html>
@@ -34,20 +58,45 @@ header('Location: AdminAccess.php');
        <div class="header">
         
             <h1>Admin Access</h1>
-         <div class="login"><input type="number" placeholder="Please type Student Number" name="studno" required>
+         <div class="login">
+        <input type="text" placeholder="Please type UserName" name="user" required><br><br>
+         <input type="password" placeholder="Please type pass" name="pass" required>
          <br>
-         <div class="submit"><input type="submit" value="submit" name="submit"></button>
+         <div class="submit"><input type="submit" value="submit" name="submit" ></button>
          
             
    </div>
-
-
+         </div>
+       </div></div>
 
 
 
 
    </form>
    
-  
+ <script>
+   
+            function validation()  
+            {  
+                var id=document.f1.user.value;  
+                var ps=document.f1.pass.value;  
+                if(id.length=="" && ps.length=="") {  
+                    alert("User Name and Password fields are empty");  
+                    return false;  
+                }  
+                else  
+                {  
+                    if(id.length=="") {  
+                        alert("User Name is empty");  
+                        return false;  
+                    }   
+                    if (ps.length=="") {  
+                    alert("Password field is empty");  
+                    return false;  
+                    }  
+                }                             
+            }  
+      
+ </script> 
 </body>
 </html>

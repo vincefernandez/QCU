@@ -1,19 +1,37 @@
 <?php 
 include 'connection.php';
- include 'fileslog.php';
-session_start();
 
-$student = $_SESSION['studno'];
+// session_start();
+
+// $student = $_SESSION['studno'];
+
+// $student = $_SESSION['studno'];
+// $email1 = $_SESSION['email'];
+// $studno1 = $_SESSION['studNumber'];
+// $firstname1 = $_SESSION['firstname'];
+// $lastname1 = $_SESSION['lastname'];
+// $campus1 = $_SESSION['campus'];
+// $subject1 = $_SESSION['subject'];
+// $form1 = $_SESSION['form'];
 
 
-$email1 = $_SESSION['email'];
-$studno1 = $_SESSION['studNumber'];
-$firstname1 = $_SESSION['firstname'];
-$lastname1 = $_SESSION['lastname'];
-$campus1 = $_SESSION['campus'];
-$subject1 = $_SESSION['subject'];
-$form1 = $_SESSION['form'];
-
+// if(isset($_POST['Fileupload'])){
+//   $title =  $_POST['title'];
+//      $pname = rand(1000,10000)."-".$_FILES["file"]["name"];
+ 
+//      $tname = $_FILES["file"]["tmp_name"];
+//      $uploads_dir = 'uploads';
+//      move_uploaded_file($tname,$uploads_dir.'/'.$pname);
+ 
+//      $InsertFile = "INSERT INTO haha(title,File) 
+//      Values ('$title',$pname')";
+//      if(mysqli_query($conn,$InsertFile)){
+//          echo "File Uploaded Successfully!";
+//      }
+//      else{
+//          echo "ERROR";
+//      }
+//  }
 
 // if(isset($_POST['fileSubmit'])){
 //   $_SESSION['file'] = htmlentities(($_POST['file']));
@@ -56,8 +74,8 @@ $form1 = $_SESSION['form'];
 </head>
 <body class="bg-info">
 <?php 
-include 'connection.php';
-if(isset($_POST['submit'])){
+
+if(isset($_POST['Delete'])){
   if(isset($_POST['id'])){
     foreach($_POST['id'] as $id){
         $query = "DELETE FROM formtable WHERE id = '$id'";
@@ -84,27 +102,24 @@ $sql = "Select * From formtable LIMIT 10";
 $result = mysqli_query($conn,$sql);
 ?>
 <button class="BackButtonTop"><a href="AdminAccess.php"><span class="glyphicon glyphicon-hand-left"> Go Back!</span></button></a><br><br></a>
-  <form action="reciever.php" method="post">
+  
   <div class="container">
   <div>
   <div>
-  <center><h2>Student Request List</h2></center>
-
-
-
-
-
+  <center><h2>Student's Reciever File</h2></center>
+<form action="reciever.php" method="post">
   <table class="table table-dark">
     <thead>
      <tr>
       <td colspan="5">
       
-      <input type="submit" name="submit" value="Delete" class="danger btn-danger"
+      <input type="submit" name="Delete" value="Delete" class="danger btn-danger"
       onclick="return confirm('Are you sure you want to delete?')">
         </td>
      </tr>
-      <tr>
+     <tr>
         <th><input type="checkbox" id="checkAll"></th>
+      
         <th>Email</th>
         <th>Student Number</th>
         <th>First Name</th>
@@ -112,49 +127,47 @@ $result = mysqli_query($conn,$sql);
         <th>Campus</th>
         <th>Requesting For..</th>
         <th>message</th>
+        <th>Send File</th>
        
         
       </tr>
     </thead>
     <tbody>
-    <?php
+   
 
-    while($row=mysqli_fetch_array($result)){
+   
+  <?php while($row=mysqli_fetch_array($result)){
 
     
     ?>
-   
+
+
+ 
       <tr>
-        <td><input type="checkbox" class="checkItem" value="<?= $row['id']?>" name="id[]"></td>
+      <td><input type="checkbox" class="checkItem" value="<?= $row['id']?>" name="id[]"></td>
+       
                <td><?= $row['email']; ?></td>
+            
         <td><?= $row['Student_Number']; ?></td>
         <td><?= $row['firstname']; ?></td>
         <td><?= $row['lastname']; ?></td>
         <td><?= $row['campus']; ?></td>
         <td><?= $row['message']; ?></td>
         <td><?= $row['form']; ?></td>
-        <td>
-        <form action="reciever.php" method="POST" enctype="multipart/form-data" >
-        <input type='number' name="stud" <?php echo"value=$row[Student_Number]" ?> style="background:gray" readonly>
-          <input type="file" name="myfile"> <br>
-          <button type="submit" name="save">upload</button>
-
-        </td>
-    
-  
-  
- 
-
-       
-
-
-
-
-
-
         </form>
+        <form action="reciever.php" method="post" enctype="multipart/form-data"><td>
+        <!-- <input type='number' name="stud" <?php $id = $row['id']; ?> style="background:gray" readonly> -->
+    <input type="file" name="file">
+    <button type="submit" name="save">Upload</button>
+    </form>
+    </td>
+
+
       </tr>
+      <?php include 'SendingFile.php';
+      ?>
     <?php } ?> 
+ 
     </tbody>
   </table>
   </div>
@@ -174,8 +187,6 @@ $("#checkAll").click(function(){
   }
 });
 });
-
-$('.addfiles').on('click', function() { $('#fileupload').click();return false;});
 </script>
 </body>
 </html>

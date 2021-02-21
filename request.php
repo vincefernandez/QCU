@@ -1,7 +1,6 @@
 <?php 
 include 'connection.php';
-include 'fileslog.php';
-
+include 'SendingFile.php';
 session_start();
 
 $student = $_SESSION['studno'];
@@ -16,23 +15,23 @@ $subject1 = $_SESSION['subject'];
 $form1 = $_SESSION['form'];
 
 
-if(isset($_POST['Fileupload'])){
-  $title =  $_POST['title'];
-     $pname = rand(1000,10000)."-".$_FILES["file"]["name"];
+// if(isset($_POST['Fileupload'])){
+//   $title =  $_POST['title'];
+//      $pname = rand(1000,10000)."-".$_FILES["file"]["name"];
  
-     $tname = $_FILES["file"]["tmp_name"];
-     $uploads_dir = 'uploads';
-     move_uploaded_file($tname,$uploads_dir.'/'.$pname);
+//      $tname = $_FILES["file"]["tmp_name"];
+//      $uploads_dir = 'uploads';
+//      move_uploaded_file($tname,$uploads_dir.'/'.$pname);
  
-     $InsertFile = "INSERT INTO haha(title,File) 
-     Values ('$title',$pname')";
-     if(mysqli_query($conn,$InsertFile)){
-         echo "File Uploaded Successfully!";
-     }
-     else{
-         echo "ERROR";
-     }
- }
+//      $InsertFile = "INSERT INTO haha(title,File) 
+//      Values ('$title',$pname')";
+//      if(mysqli_query($conn,$InsertFile)){
+//          echo "File Uploaded Successfully!";
+//      }
+//      else{
+//          echo "ERROR";
+//      }
+//  }
 
 // if(isset($_POST['fileSubmit'])){
 //   $_SESSION['file'] = htmlentities(($_POST['file']));
@@ -75,11 +74,11 @@ if(isset($_POST['Fileupload'])){
 </head>
 <body class="bg-info">
 <?php 
-include 'connection.php';
-if(isset($_POST['submit'])){
+
+if(isset($_POST['Delete'])){
   if(isset($_POST['id'])){
     foreach($_POST['id'] as $id){
-        $query = "DELETE FROM tbfile WHERE id = '$id'";
+        $query = "DELETE FROM fileupload WHERE id = '$id'";
         mysqli_query($conn,$query);
     }
   }
@@ -99,7 +98,7 @@ if(isset($_POST['submit'])){
 // }
 // delete this IF ERROR
 
-$sql = "Select * From tbfile where Student = $student";
+$sql = "Select * From fileupload where student = '$student' LIMIT 10";
 $result = mysqli_query($conn,$sql);
 ?>
 <button class="BackButtonTop"><a href="UserAccess.php"><span class="glyphicon glyphicon-hand-left"> Go Back!</span></button></a><br><br></a>
@@ -114,23 +113,26 @@ $result = mysqli_query($conn,$sql);
      <tr>
       <td colspan="5">
       
-      <input type="submit" name="submit" value="Delete" class="danger btn-danger"
+      <input type="submit" name="Delete" value="Delete" class="danger btn-danger"
       onclick="return confirm('Are you sure you want to delete?')">
         </td>
      </tr>
       <tr>
         <th><input type="checkbox" id="checkAll"></th>
-   
+
        <th>Student Number</th>
        <th>File Name</th>
-       <th>File Size</th>
-       <th>Action</th>
+       <th>Date</th>
+<th>View</th>
+       <th>Action </th>
+      
+     
         
       </tr>
     </thead>
     <tbody>
    
-<?php foreach ($files as $file): ?>
+
    
   <?php while($row=mysqli_fetch_array($result)){
 
@@ -142,13 +144,15 @@ $result = mysqli_query($conn,$sql);
  
       <tr>
         <td><input type="checkbox" class="checkItem" value="<?= $row['id']?>" name="id[]"></td>
-               
-               <td><?= $row['Student']; ?></td>
-        <td><?= $row['name']; ?></td>
-        <td><?= $row['size']; ?></td>
+             
+               <td><?= $row['student']; ?></td>
+               <td><?= $row['download']; ?></td>
+               <th><?= $row['date']; ?></th>
+               <td><a href="hays/<?php echo $row['download'] ?>" target="_blank">View File</a></td>
+       
       
       
-        <td><a href="downloads.php?file_id=<?php echo $file['id'] ?>">Download File</a></td>
+        <td><a href="downloads.php?file=<?php echo $row['download'] ?>">Download File</a></td>
 
 
 
@@ -159,7 +163,7 @@ $result = mysqli_query($conn,$sql);
       </tr>
       
     <?php } ?> 
-    <?php endforeach;?>
+ 
     </tbody>
   </table>
   </div>

@@ -6,10 +6,14 @@ include 'connection.php';
 
 
 // Uploads files
+
+
+
 if (isset($_POST['save'])) { // if save button on the form is clicked
+    if(isset($_FILES['file'])){
     // name of the uploaded file
-    $filename = $_FILES['myfile']['name'];
-    $stud1 = $_POST['stud'];
+    $filename = $_FILES["file"]["name"];
+    $stud1 = $_POST["stud"];
     // destination of the file on the server
     $destination = 'uploads/' . $filename;
 
@@ -17,17 +21,17 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
     $extension = pathinfo($filename, PATHINFO_EXTENSION);
 
     // the physical file on a temporary uploads directory on the server
-    $file = $_FILES['myfile']['tmp_name'];
-    $size = $_FILES['myfile']['size'];
+    $file = $_FILES["file"]["tmp_name"];
+    $size = $_FILES["file"]["size"];
 
     if (!in_array($extension, ['zip', 'pdf', 'docx','png','PNG','jpeg','jpg'])) {
         echo "You file extension must be .zip, .pdf or .docx";
-    } elseif ($_FILES['myfile']['size'] > 1000000) { // file shouldn't be larger than 1Megabyte
+    } elseif ($_FILES["file"]['size'] > 1000000) { // file shouldn't be larger than 1Megabyte
         echo "File too large!";
     } else {
         // move the uploaded (temporary) file to the specified destination
         if (move_uploaded_file($file, $destination)) {
-            $sql = "INSERT INTO tbfile (name,Student, size, downloads) VALUES ('$filename','$stud1',$size, 0)";
+            $sql = "INSERT INTO fileupload (name,tudent, download) VALUES ('$filename','$stud1' 0)";
            
             if (mysqli_query($conn, $sql)) {
                 echo "File uploaded successfully";
@@ -38,12 +42,16 @@ if (isset($_POST['save'])) { // if save button on the form is clicked
     }
 }
 
+$sql1 = "SELECT * FROM fileupload";
+$result1 = mysqli_query($conn, $sql1);
 
+$files = mysqli_fetch_all($result1, MYSQLI_ASSOC);
+}
 if (isset($_GET['file_id'])) {
     $id = $_GET['file_id'];
 
     // fetch file to download from database
-    $sql = "SELECT * FROM tbfile WHERE id=$id";
+    $sql = "SELECT * FROM fileupload WHERE id=$id";
     $result = mysqli_query($conn, $sql);
 
     $file = mysqli_fetch_assoc($result);
@@ -61,14 +69,9 @@ if (isset($_GET['file_id'])) {
 
         // Now update downloads count
         $newCount = $file['downloads'] + 1;
-        $updateQuery = "UPDATE tbfile SET downloads=$newCount WHERE id=$id";
+        $updateQuery = "UPDATE fileupload SET downloads=$newCount WHERE id=$id";
         mysqli_query($conn, $updateQuery);
         exit;
     }
 
 }
-
-$sql1 = "SELECT * FROM tbfile";
-$result1 = mysqli_query($conn, $sql1);
-
-$files = mysqli_fetch_all($result1, MYSQLI_ASSOC);

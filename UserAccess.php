@@ -4,13 +4,13 @@ session_start();
 $student = $_SESSION['studno'];
 
 
-$email1 = $_SESSION['email'];
-$studno1 = $_SESSION['studNumber'];
-$firstname1 = $_SESSION['firstname'];
-$lastname1 = $_SESSION['lastname'];
-$campus1 = $_SESSION['campus'];
-$subject1 = $_SESSION['subject'];
-$form1 = $_SESSION['form'];
+// $email1 = $_SESSION['email'];
+// $studno1 = $_SESSION['studNumber'];
+// $firstname1 = $_SESSION['firstname'];
+// $lastname1 = $_SESSION['lastname'];
+// $campus1 = $_SESSION['campus'];
+// $subject1 = $_SESSION['subject'];
+// $form1 = $_SESSION['form'];
 
 
 
@@ -60,12 +60,10 @@ $form1 = $_SESSION['form'];
           <li><a href="CommentForm.php">Registration Form</a></li>
         </ul>
       </li>
-     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Contact Our Administrations!<span class="caret"></span></a>
+     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Message Admin<span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">IT Department</a></li>
-          <li><a href="#">Accountancy Department</a></li>
-          <li><a href="#">Entrepreneur Department</a></li>
-          <li><a href="#">Engineering Department</a></li>
+          <li><a href="Concerns.php">Concerns</a></li>
+          <li><a href="Feedback.php">Inbox</a></li>
         </ul>
       </li> 
     <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="request.php">Your Request Form <span class="caret"></span></a>
@@ -75,6 +73,12 @@ $form1 = $_SESSION['form'];
         </ul>
       </li> 
           
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="request.php">Announcement From Admin <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+        <li><a href="announcementRecieverStudent.php">Announcement<i class="fas fa-bell" id="request-Notif" style="color: black;"></i></a></li>
+        </ul>
+      </li> 
     </ul>
    
      
@@ -119,7 +123,7 @@ if ($result->num_rows > 0) {
       <th>Section</th>
       <th>Day</th>
       <th>Email</th>
-      <th>Fileupload</th>
+     
     </thead>
     <tbody>
   
@@ -134,7 +138,7 @@ if ($result->num_rows > 0) {
   <td  class="Info"> <?php echo $row['Section']; ?> </td>
   <td class="Info"><?php echo $row['Day']; ?> </td>
   <td class="Info"> <?php echo $row['Email']; ?> </td>
-  <td class="Info"> <?php echo $row['File']; ?> </td>
+ 
   </tr>
   
  
@@ -153,7 +157,23 @@ if ($result->num_rows > 0) {
   
 <?php
   $conn->close();
+  
   ?>
-
+<script>
+function AnnounceRecievable() {
+    setInterval(function(){
+      var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("request-Notif").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "concernsData.php", true);
+  xhttp.send();
+    },1000);
+  
+}
+AnnounceRecievable();
+</script>
 </body>
 </html>
