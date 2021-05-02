@@ -1,5 +1,6 @@
 {
     "liveServer.settings.useWebExt": true,
-    "php.validate.executablePath": "c:/php/php.exe"
+    "php.validate.executablePath": "c:/php/php.exe",
+    "liveServer.settings.port": 5501
 
 }

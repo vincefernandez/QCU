@@ -1,176 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="UTF-8">
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="qcu9.png">
-    <link rel="stylesheet"  href="style.css">
-    <link rel="stylesheet" href="animationAlert/animation.css">
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
-    <title>Quezon City University</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Hover-master/css/hover-min.css">
+    <link rel="stylesheet" href="Hover-master/css/hover.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link href="maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
+    <title>Portfolio Sample!</title>
 </head>
 <body>
-  
-    <div class="wrapper">
-    
-      <div class="header" id="header">
-        
-          <div class="login-text">
-            
-          <button class="cta">
-            <i class="fas fa-chevron-down fa-2x"></i>
-            LogIn!</button>
-          <div class="text">
-
-           
-            <p> Quezon City University Student Portal</p>
-            
-              
-<div class="image">
-  <div><a href="LoginForAdmin.php">
-     <img src="admin.jpg"  alt="Admin" class="AvatarPic" title="Administration">
-    <button class="btnAccess"><a href="LoginForAdmin.php">
-      <span class="none">Admin</span> Access
-  </div>
-
- <div> <a href="LoginForStudent.php">
-    <img src="student.png" alt="Student" class="AvatarPic" title="Student">
-    <button class="btnAccess"><a href="LoginForStudent.php">
-      <span class="none">Student</span> Access
-  
-  </div>
- 
- </div>
- 
-
-
-          <!--           
-           <br>
-            <p class="Welcome"> Welcome Student</p>
-          <br> 
-           <br>
-            <input type="text" placeholder="Username">
-            <br>
-            <input type="password" placeholder="Password">
-           <br>
-          
-            <button class="Admin" id="Admin"  onclick="alert('Welcome Admin')"> Admin Access!</button>
-            <button class="Student" id="Stud" onclick="alert('Welcome Student')">   Student Access!</button> -->
-           
-
-
-          </div>
-          </div>
-      </div>
-        <div class="call-text">
-          <h1 class ="h1">Quezon City University Portal <span>
-            is a gateway for online student information, lectures, discussions, resources and other services exclusive to QCU students.
-            
-            It aims to enhance and extend the students' learning experience through information technology beyond the bounds of the classroom.
-          
-          </span>
-           </h1>
-        <a href =#mainPage class="visit1"> <button class="Visit"><i class="fa fa-chevron-down" aria-hidden="true"></i>  Visit QCU</button></a></a>
-        </div>
-     
-      
-    </div>
-  
-</div>
-<!--  MAIN Course  
-    -->
-    <!-- <div class="home">
-      <ul class="ul">
-     
-      <li class="li"><a href="#videos" onclick="myFunction()">Admission</a></li>
-      <li class="li"><a href="#videos" onclick="myFunction()">Contact</a></li>
-      <li class="li"><a href="#videos" onclick="myFunction()">Academics</a></li>
-      <li class="li"><a href="#videos" onclick="myFunction()">About US</a></li>
-      
-      </ul>	  
-        </div> -->
-        
-    <div class= 'mainPage' id="mainPage">
-<div class="Intro" id='intro1'>
- 
-<h1 class = "title"> Good Life Starts Here! </h1>
-</div>
+  <form action="login.php" method="POST">
+<nav class="navbar" id="navbar">
    
-<div class="SlidesContainer">
-  <div class="mySlides">
-    <div class="numbertext">1 / 6</div>
-    <img class="image1 " src="qcu1.jpg" style="width:80%" >
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">2 / 6</div>
-    <img class="image1 "  src="qcu2.jpg" style="width:80%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">3 / 6</div>
-    <img class="image1 " src="qcu8.jpg" style="width:80%">
-  </div>
-    
-  <div class="mySlides">
-    <div class="numbertext">4 / 6</div>
-    <img class="image1 " src="qcu4.jpg" style="width:80%">
-  </div>
-
-  <div class="mySlides">
-    <div class="numbertext">5 / 6</div>
-    <img class="image1" src="qcu5.jpg" style="width:80%">
-  </div>
-    
-  <div class="mySlides">
-    <div class="numbertext">6 / 6</div>
-    <img class="image1" src="qcu6.jpg" style="width:50%">
-  </div>
- 
- 
-  <a class="prev" onclick="plusSlides(-1)">❮</a>
-  <a class="next" onclick="plusSlides(1)">❯</a>
-
-  <div class="caption-container">
-    <p id="caption"></p>
-  </div>
-
-  <div class="row">
-    <div class="column">
-      <img class="demo cursor " src="qcu1.jpg" style="width:50%" onclick="currentSlide(1)">
+    <div class="max-width">
+      <div class="logo">
+        <p><img src="qcu9.png">
+          <span style="position: absolute; top: 0; left: 14%; color:rgb(253, 244, 244); font-size: 25px;"> Quezon City </span>
+          <span style="position: absolute; top: 30%; left: 15%; color:yellow; font-size: 20px;" > University <br></span>
+          <span style="position: absolute; top: 51%; left: 12%; font-size: 1rem; color:rgb(243, 65, 11); font-size: 20px;">Good  Life Starts Here</span>
+           </p></div>
+        <ul class="menu">
+            <li><a href="#home" class="hvr-icon-pulse"> <i class="fas fa-home hvr-icon fa-1x" style="color: white;">Home</i></a></li>
+            <li><a href="#about"class="hvr-icon-pulse">  <i class="fas fa-id-card hvr-icon fa-1x "style="color: white;">About Me</i></a></li>
+            <li><a href="#" class="hvr-icon-pulse"><i class="fas fa-project-diagram hvr-icon fa-1x"style="color: white;">Projects</i></a></li>
+           
+          
+            <li class="btn-login"><a href="LoginForAdmin.php" class="hvr-icon-pulse"><i class="fas fa-id-card hvr-icon fa-1x"> Admin Login </i></a></li>
+            <li class="btn-login"><a href="LoginForStudent.php" class="hvr-icon-pulse"><i class="fas fa-id-card hvr-icon fa-1x"> Student Login</i></a></li>
+          
+        </ul>
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
     </div>
-    <div class="column">
-      <img class="demo cursor " src="qcu2.jpg" style="width:50%" onclick="currentSlide(2)">
-    </div>
-    <div class="column">
-      <img class="demo cursor " src="qcu8.jpg" style="width:50%" onclick="currentSlide(3)">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="qcu4.jpg" style="width:50%" onclick="currentSlide(4)">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="qcu5.jpg" style="width:50%" onclick="currentSlide(5)">
-    </div>    
-    <div class="column">
-      <img class="demo cursor" src="qcu6.jpg" style="width:50%" onclick="currentSlide(6)">
-   </div>
-</div>
-</div>
-</div>  
-    <div id="headershit">
-      <div id="headddd">
-        <a href="#header"> <img class="cursor" src="qcu9.png" height = "50px"></a>
 
-        <span >Quezon City University</span>
+</nav>
+</form>
+
+
+<!-- home  -->
+<section class="home" id="home">
+    <div class="max-width">
+        
+      <div class="home-content">
+        <div class="column left">
+        <!-- <div class="text-1"> Welcome, Students!</div> -->
+        <div class="text-2"><p class="hvr-bounce-in" id='awit'>Quezon City University</div></p>
+        <div class="text-1"> Quezon City University 
+         (QCU) is the Education Revolution! It 
+         is the first non-profit, American-accredited, 
+         tuition-free online university dedicated to 
+         opening access to higher education globally.</div>
+       
+        <br><br><br>
+        
+        <a href="login1.php" class="hvr-shutter-out-vertical out"><p> Apply as Student</p></a>
+      </form>
       </div>
-    </div>
+        <!-- <div class="column right">
+          
+            <a href="#about"class="hvr-shutter-in-vertical"> <i class="fas fa-cloud-rain "></i></a>
+            <a href="#about"class="hvr-shutter-in-vertical"> <i class="fas fa-bolt "></i></a>
+            <a href="#about"class="hvr-shutter-in-vertical"> <i class="far fa-snowflake "></i></a>
+             </div> -->
 
-</div>
-    <script src="function.js"></script>
+    </div>
+      
+       
+          
+          <div class="center">
+            <a href="#services" class="hvr-icon-down">
+               <i class="fas fa-angle-double-down hvr-icon fa-5x"></i>
+                
+              </a>
+        
+        </div>
+        <!-- <div class="center">
+            <a href="">
+                 <p class="label success new-label"><span class="align">Learn More!</span></p>
+            </a>
+        </div> -->
+    </div>
+    
+  
+    
+</section>
+
+
+    <!-- <section class="about" id="about">
+    <div class="max-width">
+        <div class="title">
+        <h2 class="hvr-wobble-vertical">About Me</h2></div>
+            <div class="about-content">
+                <div class="column left">
+                    <img src="/IMG/qcu9.png" alt="">
+                </div>
+                
+                    <div class="column right">
+                    <div class="text">
+                     I'm Vincent and I'm a <span>Programmer</span><br>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio sequi quos laboriosam dolorem numquam aperiam libero similique quia tempore. Itaque, amet qui. Minima nihil voluptatibus sapiente id earum eius inventore dolore obcaecati quo ipsa impedit voluptates excepturi laudantium aut optio veritatis a, modi, iste culpa? Quae aut aspernatur iure, nisi dolores quibusdam ducimus maiores ipsum facere ratione quaerat! Quidem, veniam.</p>
+                        <a href="#" class="button hvr-wobble-to-top-right">Download Resume!</a>
+                
+                 
+                     </div>
+            </div>
+    </div>
+    
+        
+    </section> -->
+
+
+
+    <section class="services" id="services">
+        <div class="max-width">
+            <div class="title">
+            <h2 class="hvr-wobble-vertical">My Services</h2></div>
+              
+            <div class="row">
+                <div class="column">
+                  
+                  <div class="card">
+                    <h3>Quality</h3><br>
+                    <p>Provides Quality Educations that helps students to become competetive</p>
+                     <p><img src="qcu9.png" alt=""></p>
+                    
+                  </div>
+                </div>
+              
+                <div class="column">
+                  <div class="card">
+                    <h3>Tuition Fee</h3><br>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p><img src="qcu9.png" alt=""></p>
+                  </div>
+                </div>
+                
+                <div class="column">
+                  <div class="card">
+                    <h3>Career & Oppurtunities</h3><br>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p><img src="qcu9.png" alt=""></p>
+                   
+                  </div>
+                </div>
+                
+                <div class="column">
+                  <div class="card">
+                    <h3>Friendly</h3><br>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <p><img src="qcu9.png" alt=""></p>
+                    
+                  </div>
+                </div>
+               
+              </div>
+
+        </div>
+        
+            
+        </section>
+<script src="function.js"></script>
 </body>
 </html>
-
